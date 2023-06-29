@@ -7,10 +7,203 @@
         </title>
     </head>
     <body>
-        <header>
-            <h1>Calendar page</h1>
-        </header>
-        <br>
-        <b>CALENDAR HERE</b>
+        <button onclick="previousMonth()"><</button>
+        <button onclick="nextMonth()">></button>
+        <table>
+
+            <h1 id="monthNameWYear">Month Name w year</h>
+            <tr>  
+                <th>Sunday</td>
+                <th>Monday</td>
+                <th>Tuesday</td>
+                <th>Wednesday</td>
+                <th>Thursday</td>
+                <th>Friday</td>
+                <th>Saturday</td>
+            </tr>
+            <tr>
+                <td id=1></td>
+                <td id=2></td>
+                <td id=3></td>
+                <td id=4></td>
+                <td id=5></td>
+                <td id=6></td>
+                <td id=7></td>
+            </tr>
+            <tr>
+                <td id=8></td>
+                <td id=9></td>
+                <td id=10></td>
+                <td id=11></td>
+                <td id=12></td>
+                <td id=13></td>
+                <td id=14></td>
+            </tr>
+            <tr>
+                <td id=15></td>
+                <td id=16></td>
+                <td id=17></td>
+                <td id=18></td>
+                <td id=19></td>
+                <td id=20></td>
+                <td id=21></td>
+            </tr>
+            <tr>
+                <td id=22></td>
+                <td id=23></td>
+                <td id=24></td>
+                <td id=25></td>
+                <td id=26></td>
+                <td id=27></td>
+                <td id=28></td>
+            </tr>
+            <tr>
+                <td id=29></td>
+                <td id=30></td>
+                <td id=31></td>
+                <td id=32></td>
+                <td id=33></td>
+                <td id=34></td>
+                <td id=35></td>
+            </tr>
+            <tr id="lastRow">
+                <td id=36></td>
+                <td id=37></td>
+                <td id=38></td>
+                <td id=39></td>
+                <td id=40></td>
+                <td id=41></td>
+                <td id=42></td>
+            </tr>
+        </table>
+        <script>
+            let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            let NumDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            let date = new Date();
+            let month = date.getMonth();
+            let year = date.getFullYear();
+            let calendar = getDatesInMonth(year, month);
+            changeZeroesToNull();
+            convertArrayToCalendar(calendar);
+            
+            function getDatesInMonth(year, month) {
+                let days = Array(42).fill(0);
+                let currentDate = new Date(year, month, 1);
+                let first_day = currentDate.getDay();
+                let days_2d = [];
+                let weeks = 6;
+                let weekdays = 7;
+
+                if(currentDate.getFullYear()%4 == 0){
+                    NumDays[1] = 29;
+                }
+                else{
+                    NumDays[1] = 28;
+                }
+
+                while (currentDate.getFullYear() === year && currentDate.getMonth() === month){
+                    let dayIndex = (first_day-1) + currentDate.getDate();
+                    days[dayIndex] = currentDate.getDate();
+                    currentDate.setDate(currentDate.getDate() + 1);
+                }
+                
+                let firstIndex = null;
+                for(let i=0; i<days.length; i++){
+                    if(days[i]==1){
+                        firstIndex = i;
+                    }
+
+                }
+                let previousMonth = 0;
+                if(month == 0){
+                    previousMonth = 11;
+                }
+                else{
+                    previousMonth = month-1;
+                }
+                let maxPrevMonth = NumDays[previousMonth];
+                for(let i=firstIndex-1; i>=0; i--){
+                    days[i] = maxPrevMonth;
+                    maxPrevMonth--;
+                }
+
+                lastIndex = null;
+                for(let i=0; i<days.length; i++){
+                    if(days[i]==0){
+                        lastIndex = i;
+                        break;
+                    }
+                }
+                daysInc = 1;
+                for(let i=lastIndex; i<days.length; i++){
+                    if(i%7!=0){
+                        days[i] = daysInc;
+                        daysInc++;
+                    }
+                    else{
+                        break;
+                    }
+                }
+
+                let index = 0;
+                for (let i = 0; i < weeks; i++) {
+                    days_2d[i] = [];
+                    for (let j = 0; j < weekdays; j++) {
+                    days_2d[i][j] = days[index];
+                    index ++;
+                    }
+                }
+                document.getElementById("monthNameWYear").innerHTML = "Month - " + monthNames[month] + ", Year - " + year; 
+
+                return days_2d;
+            }
+
+            function changeZeroesToNull(){
+                for(let r=0; r<calendar.length; r++){
+                    for(let c=0; c<calendar[0].length; c++){
+                        if(calendar[r][c] == 0){
+                            calendar[r][c] = null;
+                        }
+                    }
+                }
+            }
+            function nextMonth(){
+                if(month == 11){
+                    month = 0;
+                    year ++;
+                }
+                else{
+                    month ++;
+                }
+                calendar = getDatesInMonth(year, month);
+                changeZeroesToNull();
+                convertArrayToCalendar(calendar);
+                
+            }
+            function previousMonth(){
+                if(month == 0){
+                    month = 11;
+                    year--;
+                }
+                else{
+                    month--;
+                }
+                calendar = getDatesInMonth(year, month);
+                changeZeroesToNull();
+                convertArrayToCalendar(calendar);
+            }
+
+            function convertArrayToCalendar(calendar){
+                let index = 1;
+                for(let r=0; r<calendar.length; r++){
+                    for(let c=0; c<calendar[r].length; c++){
+                            document.getElementById(index).innerHTML = calendar[r][c]; 
+                            index++;
+                    }
+                }
+                
+            }
+        </script>
+        
     </body>
 </html>
