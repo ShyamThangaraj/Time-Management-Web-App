@@ -1,0 +1,19 @@
+.valid-input {
+    border: 2px solid green;
+}
+
+/* Styling for invalid input */
+.invalid-input {
+    border: 2px solid red;
+}
+
+td {
+    cursor: pointer;
+}
+
+
+#DatePopUp{
+    position: absolute;
+    margin-left: 45%;
+    margin-top: -15%;
+}

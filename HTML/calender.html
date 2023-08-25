@@ -9,7 +9,7 @@
     <body>
         <button onclick="previousMonth()"><</button>
         <button onclick="nextMonth()">></button>
-        <table>
+        <table id="calendar">
 
             <h1 id="monthNameWYear">Month Name w year</h>
             <tr>  
@@ -79,12 +79,11 @@
         <script>
             let monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             let NumDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            let default_style = document.getElementById("lastRow").style.display
             let date = new Date();
             let month = date.getMonth();
             let year = date.getFullYear();
             let calendar = getDatesInMonth(year, month);
-            changeZeroesToNull();
-            convertArrayToCalendar(calendar);
             
             function getDatesInMonth(year, month) {
                 let days = Array(42).fill(0);
@@ -155,10 +154,33 @@
                 }
                 document.getElementById("monthNameWYear").innerHTML = "Month - " + monthNames[month] + ", Year - " + year; 
 
+                checkLastRowForZeros(days_2d)
+                changeZeroesToNull(days_2d);
+                convertArrayToCalendar(days_2d);
                 return days_2d;
             }
 
-            function changeZeroesToNull(){
+            function checkLastRowForZeros(twoDArray) {
+                console.log('ss', twoDArray)
+                if (!Array.isArray(twoDArray) || twoDArray.length === 0) {
+                    return false; // Invalid input, not a 2D array or empty array
+                }
+
+                const lastRow = twoDArray[twoDArray.length - 1];
+
+                for (let i = 0; i < lastRow.length; i++) {
+                    if (lastRow[i] !== 0) {
+                        document.getElementById("lastRow").style.display = null; // Found a non-zero value, return false
+                        // console.log('set to default:', default_style)
+                        return;
+                    }
+                }
+
+                console.log('set to none: none')
+                document.getElementById("lastRow").style.display = "none"; // All values in the last row are zero
+            }
+
+            function changeZeroesToNull(calendar){
                 for(let r=0; r<calendar.length; r++){
                     for(let c=0; c<calendar[0].length; c++){
                         if(calendar[r][c] == 0){
@@ -176,9 +198,7 @@
                     month ++;
                 }
                 calendar = getDatesInMonth(year, month);
-                changeZeroesToNull();
-                convertArrayToCalendar(calendar);
-                
+               
             }
             function previousMonth(){
                 if(month == 0){
@@ -189,8 +209,6 @@
                     month--;
                 }
                 calendar = getDatesInMonth(year, month);
-                changeZeroesToNull();
-                convertArrayToCalendar(calendar);
             }
 
             function convertArrayToCalendar(calendar){
@@ -200,6 +218,9 @@
                             document.getElementById(index).innerHTML = calendar[r][c]; 
                             index++;
                     }
+                }
+                if(calendar[5] == null){
+
                 }
                 
             }
