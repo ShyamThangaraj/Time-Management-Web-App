@@ -164,7 +164,7 @@ export default function Calendar() {
             <button onClick={previousMonth}>previous</button>
             <button onClick={nextMonth}>next</button>
             <h1>Month: {CurrentMonthName}, Year: {year}</h1>
-            <table>
+            <table class="Calendar">
                 <tr>  
                     <th>Sunday</th>
                     <th>Monday</th>
@@ -175,64 +175,64 @@ export default function Calendar() {
                     <th>Saturday</th>
                 </tr>
                 <tr>
-                    <td onClick={dateClicked}><Day index={1} /></td>
-                    <td onClick={dateClicked}><Day index={2} /></td>
-                    <td onClick={dateClicked}><Day index={3} /></td>
-                    <td onClick={dateClicked}><Day index={4} /></td>
-                    <td onClick={dateClicked}><Day index={5} /></td>
-                    <td onClick={dateClicked}><Day index={6} /></td>
-                    <td onClick={dateClicked}><Day index={7} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={1} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={2} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={3} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={4} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={5} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={6} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={7} /></td>
                 </tr>
                 <tr>
-                    <td onClick={dateClicked}><Day index={8} /></td>
-                    <td onClick={dateClicked}><Day index={9} /></td>
-                    <td onClick={dateClicked}><Day index={10} /></td>
-                    <td onClick={dateClicked}><Day index={11} /></td>
-                    <td onClick={dateClicked}><Day index={12} /></td>
-                    <td onClick={dateClicked}><Day index={13} /></td>
-                    <td onClick={dateClicked}><Day index={14} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={8} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={9} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={10} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={11} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={12} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={13} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={14} /></td>
                 </tr>
                 <tr>
-                    <td onClick={dateClicked}><Day index={15} /></td>
-                    <td onClick={dateClicked}><Day index={16} /></td>
-                    <td onClick={dateClicked}><Day index={17} /></td>
-                    <td onClick={dateClicked}><Day index={18} /></td>
-                    <td onClick={dateClicked}><Day index={19} /></td>
-                    <td onClick={dateClicked}><Day index={20} /></td>
-                    <td onClick={dateClicked}><Day index={21} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={15} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={16} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={17} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={18} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={19} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={20} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={21} /></td>
                 </tr>
                 <tr>
-                    <td onClick={dateClicked}><Day index={22} /></td>
-                    <td onClick={dateClicked}><Day index={23} /></td>
-                    <td onClick={dateClicked}><Day index={24} /></td>
-                    <td onClick={dateClicked}><Day index={25} /></td>
-                    <td onClick={dateClicked}><Day index={26} /></td>
-                    <td onClick={dateClicked}><Day index={27} /></td>
-                    <td onClick={dateClicked}><Day index={28} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={22} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={23} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={24} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={25} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={26} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={27} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={28} /></td>
                 </tr>
                 <tr>
-                    <td onClick={dateClicked}><Day index={29} /></td>
-                    <td onClick={dateClicked}><Day index={30} /></td>
-                    <td onClick={dateClicked}><Day index={31} /></td>
-                    <td onClick={dateClicked}><Day index={32} /></td>
-                    <td onClick={dateClicked}><Day index={33} /></td>
-                    <td onClick={dateClicked}><Day index={34} /></td>
-                    <td onClick={dateClicked}><Day index={35} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={29} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={30} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={31} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={32} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={33} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={34} /></td>
+                    <td class="Date" onClick={dateClicked}><Day index={35} /></td>
                 </tr>
                 {showLastRow && 
                     <tr> 
-                        <td onClick={dateClicked}><Day index={36} /></td>
-                        <td onClick={dateClicked}><Day index={37} /></td>
-                        <td onClick={dateClicked}><Day index={38} /></td>
-                        <td onClick={dateClicked}><Day index={39} /></td>
-                        <td onClick={dateClicked}><Day index={40} /></td>
-                        <td onClick={dateClicked}><Day index={41} /></td>
-                        <td onClick={dateClicked}><Day index={42} /></td>
+                        <td class="Date" onClick={dateClicked}><Day index={36} /></td>
+                        <td class="Date" onClick={dateClicked}><Day index={37} /></td>
+                        <td class="Date" onClick={dateClicked}><Day index={38} /></td>
+                        <td class="Date" onClick={dateClicked}><Day index={39} /></td>
+                        <td class="Date" onClick={dateClicked}><Day index={40} /></td>
+                        <td class="Date" onClick={dateClicked}><Day index={41} /></td>
+                        <td class="Date" onClick={dateClicked}><Day index={42} /></td>
                     </tr>
                 }
                 {ShowDatePopUp &&
                     <div id="DatePopUp">
-                        <form>
+                        <form class="ReminderPopUp">
                             <h3>Date: {CurrentClickedDay} {monthNames[month]}, {year}</h3>
                             <label>Reminder: <input type="text" name="reminderText" /></label>
                             <br /><br />

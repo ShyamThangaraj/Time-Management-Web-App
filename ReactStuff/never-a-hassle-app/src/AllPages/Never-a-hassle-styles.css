@@ -11,9 +11,30 @@ td {
     cursor: pointer;
 }
 
+Table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
-#DatePopUp{
+.ReminderPopUp{
+    position:fixed;
+    display: block;
+}
+
+.Date {
+    height: 100px;
+    width: 100px;    
+    text-align: center;
+}
+
+.Date:hover{
+    color: gray;
+}
+
+
+
+/* #DatePopUp{
     position: absolute;
     margin-left: 45%;
     margin-top: -15%;
-}
+} */

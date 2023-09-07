@@ -3,20 +3,19 @@ package com.webapplications.neverahassle.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.webapplications.neverahassle.model.User;
+import com.webapplications.neverahassle.model.Reminder;
 
 import com.webapplications.neverahassle.repository.*;
 
 @Service
-public class UserServiceImplementation implements UserService{
+public class ReminderServiceImplementation implements ReminderService{
 
 	@Autowired
-	private UserRepository userrepository; 
+	private ReminderRepository reminderrepository; 
 	@Override
 	
-	public User saveUser(User user) {
+	public Reminder saveReminder(Reminder reminder) {
 		// TODO Auto-generated method stub
-		return userrepository.save(user);
+		return reminderrepository.save(reminder);
 	}
-	
 }
