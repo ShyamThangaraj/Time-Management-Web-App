@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-NeverahassleApplication<neverahassle>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.webapplications.neverahassle.NeverahassleApplication",
+      "projectName": "neverahassle",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

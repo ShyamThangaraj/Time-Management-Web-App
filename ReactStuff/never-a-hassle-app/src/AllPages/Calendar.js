@@ -160,11 +160,11 @@ export default function Calendar() {
     }
 
     return (
-        <div>
+        <div class="calendarTable">
             <button onClick={previousMonth}>previous</button>
             <button onClick={nextMonth}>next</button>
             <h1>Month: {CurrentMonthName}, Year: {year}</h1>
-            <table class="Calendar">
+            <table>
                 <tr>  
                     <th>Sunday</th>
                     <th>Monday</th>
@@ -233,7 +233,7 @@ export default function Calendar() {
                 {ShowDatePopUp &&
                     <div id="DatePopUp">
                         <form class="ReminderPopUp">
-                            <h3>Date: {CurrentClickedDay} {monthNames[month]}, {year}</h3>
+                            <div class="dateClass"><h3>Date: {CurrentClickedDay} {monthNames[month]}, {year}</h3></div>
                             <label>Reminder: <input type="text" name="reminderText" /></label>
                             <br /><br />
                             <label>Time: <input ref={ TimeRef } type="time" name="reminderTime" /></label>

@@ -1,10 +1,22 @@
 .valid-input {
     border: 2px solid green;
+    border-radius: 5px;
+    height: 35px;
+    width: 55%;
 }
 
 /* Styling for invalid input */
 .invalid-input {
     border: 2px solid red;
+    border-radius: 5px;
+    height: 35px;
+    width: 55%;
+}
+
+.blank {
+    border-radius: 5px;
+    height: 35px;
+    width: 55%;
 }
 
 td {
@@ -16,8 +28,24 @@ Table, th, td{
     border-collapse: collapse;
 }
 
+.calendarTable{
+    position: relative;
+    left: 25%;
+    top: 30px;
+}
+
+.dateClass{
+    width: 245px;
+}
+
 .ReminderPopUp{
-    position:fixed;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);;
+    padding: 35px;
+    border-radius: 30px;
+    position:absolute;
+    top: 245px;
+    left: 14.5%;
+    background-color: white;
     display: block;
 }
 
@@ -31,8 +59,76 @@ Table, th, td{
     color: gray;
 }
 
+body{
+    background-color: #f5f7fc;
+}
+
+.loginContainer{
+    position: relative;
+    left: 35%;
+    top: 60px;
+    width: 30%;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    
+
+}
+
+.signupContainer {
+    position: relative;
+    left: 35%;
+    top: 45px;
+    width: 30%;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
 
 
+}
+
+.signupElement {
+    text-align: left;
+    padding-left: 22%;
+}
+
+.loginElement{
+    text-align: left;
+    padding-left: 22%;
+}
+
+.signupInput{
+    border-radius: 5px;
+    height: 35px;
+    width: 55%;
+}
+
+.loginInput{
+    border-radius: 5px;
+    height: 35px;
+    width: 55%;
+}
+
+.submitButton{
+    width: 45%;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #324dc7;
+    color: #f5f7fc;
+    font-size: medium;
+}
+
+.loginTitle{
+    border-radius: 7px;
+    text-align: center;
+    position: relative;
+    left: 35%;
+    top: 20px;
+    width: 30%;
+    font-size: xx-large;
+    color: #f5f7fc;
+    background-color: rgb(112, 120, 156);
+}
 /* #DatePopUp{
     position: absolute;
     margin-left: 45%;

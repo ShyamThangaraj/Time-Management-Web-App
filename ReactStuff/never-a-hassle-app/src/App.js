@@ -12,23 +12,6 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/Signup">Signup</Link>
-            </li>
-            <li>
-              <Link to="/Login">Login</Link>
-            </li>
-            <li>
-              <Link to="/Calendar">Calendar</Link>
-            </li>
-          </ul>
-        </nav>
-
         <Routes> {/* Use Routes here */}
           <RouteV6 path="/" element={<Home />} /> 
           <RouteV6 path="/Signup" element={<Signup />} /> 
