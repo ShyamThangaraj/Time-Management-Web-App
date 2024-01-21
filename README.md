@@ -1,5 +1,14 @@
 # Event Scheduling Calendar Application
 
+## Table of Contents
+1. [Overview](#overview)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Dependencies](#dependencies)
+5. [Project Structure](#project-structure)
+6. [How to Run](#how-to-run)
+7. [Author](#author)
+
 ## Overview
 
 This application is designed to function as an event scheduling calendar, similar to Google Calendar. Developed primarily in React and Eclipse IDE, it utilizes various JavaScript libraries, including 'React,' 'App,' 'ReactDOM,' 'reportWebVitals,' 'userEvent,' 'useRef,' 'useState,' 'TLDs' from the TLDs file, and more. The pages are interconnected using React Router, and the designs are crafted using CSS. The backend is powered by a MySQL database (work in progress).
